@@ -20,8 +20,16 @@ router.post('/', (req, res) => {
 
 // GET /projects/new - display form for creating a new project
 router.get('/new', (req, res) => {
-  res.render('projects/new')
+  db.category.findOrCreate({
+    where: {
+      name: 'node'
+    }.then(([category, created]) => {
+      db.
+      console.log(category)
+  })
+  
 })
+res.render('projects/new')
 
 // GET /projects/:id - display a specific project
 router.get('/:id', (req, res) => {
